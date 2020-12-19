@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import com.ab.boncoin.databinding.FragmentAlbumListBinding
 import com.ab.boncoin.databinding.FragmentPhotoDetailsBinding
 import com.ab.boncoin.model.Photo
 
