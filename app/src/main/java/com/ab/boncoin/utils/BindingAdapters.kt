@@ -60,3 +60,22 @@ fun setMutableText(view: TextView, text: MutableLiveData<String>?) {
         }
     }
 
+@BindingAdapter("imageUrlFromString")
+fun setImageUrlFromString(imageView: ImageView, urlString: String??) {
+    val parentActivity: AppCompatActivity? = imageView.getParentActivity()
+
+    if (parentActivity != null && urlString != null) {
+        val urlGlide = GlideUrl(
+            urlString, LazyHeaders.Builder()
+                .addHeader("User-Agent", "your-user-agent")
+                .build()
+        )
+        GlideApp.with(imageView.context)
+            .load(urlGlide)
+            .thumbnail(0.1f)
+
+            .into(imageView)
+
+    }
+}
+

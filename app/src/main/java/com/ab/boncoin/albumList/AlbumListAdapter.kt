@@ -42,7 +42,7 @@ class AlbumListAdapter : RecyclerView.Adapter<AlbumListAdapter.ViewHolder>() {
     override fun getItemCount(): Int {
         return if (::albumList.isInitialized) albumList.size else 0
     }
-    fun updatePostList(albumList: List<Album>) {
+    fun updateAlbumList(albumList: List<Album>) {
         this.albumList = albumList
         notifyDataSetChanged()
     }

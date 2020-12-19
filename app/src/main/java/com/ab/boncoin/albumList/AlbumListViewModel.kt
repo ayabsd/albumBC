@@ -37,7 +37,6 @@ class AlbumListViewModel(private val albumDao: AlbumDao):BaseViewModel() {
     init {
         loadPhotos()
     }
-
     override fun onCleared() {
         super.onCleared()
         subscription.dispose()
@@ -84,7 +83,7 @@ class AlbumListViewModel(private val albumDao: AlbumDao):BaseViewModel() {
             val album: Album = albums[photo.albumId.toString()] as Album
             album.photos.add(photo)
         }
-        albumListAdapter.updatePostList(albums.values.toList())
+        albumListAdapter.updateAlbumList(albums.values.toList())
         albumListAdapter.setListenner(listener)
     }
 

@@ -25,23 +25,21 @@ class AlbumListFragment : Fragment() {
     private lateinit var binding: FragmentAlbumListBinding
     private lateinit var viewModel: AlbumListViewModel
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         binding = DataBindingUtil.inflate(
             inflater,
-            com.ab.boncoin.R.layout.fragment_album_list ,
+            com.ab.boncoin.R.layout.fragment_album_list,
             container,
             false
         )
 
-        viewModel = ViewModelProviders.of(this, ViewModelFactory(activity as AppCompatActivity)).get(AlbumListViewModel::class.java)
-
+        viewModel = ViewModelProviders.of(this, ViewModelFactory(activity as AppCompatActivity))
+            .get(AlbumListViewModel::class.java)
         binding.viewModel = viewModel
-
-
         binding.lifecycleOwner = viewLifecycleOwner
-
         if (this.resources
                 .configuration.orientation === Configuration.ORIENTATION_PORTRAIT
         ) {
@@ -55,17 +53,16 @@ class AlbumListFragment : Fragment() {
                 errorMessage
             ) else hideError()
         })
-
         return binding.root
     }
 
-    private fun showError(@StringRes errorMessage: Int){
+    private fun showError(@StringRes errorMessage: Int) {
         errorSnackbar = Snackbar.make(binding.root, errorMessage, Snackbar.LENGTH_INDEFINITE)
         errorSnackbar?.setAction(com.ab.boncoin.R.string.retry, viewModel.errorClickListener)
         errorSnackbar?.show()
     }
 
-    private fun hideError(){
+    private fun hideError() {
         errorSnackbar?.dismiss()
     }
 }

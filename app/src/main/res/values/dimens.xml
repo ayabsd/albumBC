@@ -4,7 +4,7 @@
     <dimen name="item_margin">8dp</dimen>
     <dimen name="image_width">100dp</dimen>
     <dimen name="image_height">100dp</dimen>
-
-
+    <dimen name="image_details_width">500dp</dimen>
+    <dimen name="image_details_height">500dp</dimen>
 
 </resources>

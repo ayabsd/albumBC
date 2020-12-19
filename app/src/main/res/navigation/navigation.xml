@@ -15,17 +15,36 @@
 
         <action
             android:id="@+id/action_albumFragment_to_photoFragment"
-            app:destination="@id/passDataFragment" />
+            app:destination="@id/photoListFrafment" />
 
     </fragment>
 
     <fragment
-        android:id="@+id/passDataFragment"
+        android:id="@+id/photoListFrafment"
         android:name="com.ab.boncoin.photoList.PhotoListFragment"
         android:label="Pass data fragment"
         tools:layout="@layout/fragment_photo_list" >
         <argument android:name="arg_from_sender_fragment"
             app:argType="com.ab.boncoin.model.Album" />
+
+        <action
+            android:id="@+id/action_photoListFrafment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+
+
     </fragment>
+
+
+
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.ab.boncoin.photoDetails.PhotoDetailsFragment"
+        android:label="details fragment"
+        tools:layout="@layout/fragment_photo_details" >
+        <argument android:name="arg_from_sender_fragment"
+            app:argType="com.ab.boncoin.model.Photo" />
+
+    </fragment>
+
 
 </navigation>
