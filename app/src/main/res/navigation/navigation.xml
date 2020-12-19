@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/loginNavGraph"
+    app:startDestination="@id/homeFragment"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.ab.boncoin.albumList.AlbumListFragment"
+        android:label="Album fragment"
+        tools:layout="@layout/fragment_album_list" >
+
+        <action
+            android:id="@+id/action_albumFragment_to_photoFragment"
+            app:destination="@id/passDataFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/passDataFragment"
+        android:name="com.ab.boncoin.photoList.PhotoListFragment"
+        android:label="Pass data fragment"
+        tools:layout="@layout/fragment_photo_list" >
+        <argument android:name="arg_from_sender_fragment"
+            app:argType="com.ab.boncoin.model.Album" />
+    </fragment>
+
+</navigation>
