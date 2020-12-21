@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.ab.boncoin.databinding.FragmentAlbumListBinding
 import com.ab.boncoin.injection.ViewModelFactory
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.fragment_album_list.*
 
 
 /**
@@ -21,6 +22,7 @@ import com.google.android.material.snackbar.Snackbar
  */
 
 class AlbumListFragment : Fragment() {
+
     private var errorSnackbar: Snackbar? = null
     private lateinit var binding: FragmentAlbumListBinding
     private lateinit var viewModel: AlbumListViewModel
@@ -38,21 +40,17 @@ class AlbumListFragment : Fragment() {
 
         viewModel = ViewModelProviders.of(this, ViewModelFactory(activity as AppCompatActivity))
             .get(AlbumListViewModel::class.java)
+
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
-        if (this.resources
-                .configuration.orientation === Configuration.ORIENTATION_PORTRAIT
-        ) {
-            binding.albumList.layoutManager = GridLayoutManager(activity, 3)
-        } else {
-            binding.albumList.layoutManager = GridLayoutManager(activity, 4)
-        }
+
+        numberOfItemsInRecycle()
 
         viewModel.errorMessage.observe(viewLifecycleOwner, { errorMessage ->
-            if (errorMessage != null) showError(
-                errorMessage
-            ) else hideError()
+            if (errorMessage != null) showError(errorMessage)
+            else hideError()
         })
+
         return binding.root
     }
 
@@ -65,4 +63,16 @@ class AlbumListFragment : Fragment() {
     private fun hideError() {
         errorSnackbar?.dismiss()
     }
+
+    private fun numberOfItemsInRecycle() {
+
+        if (this.resources
+                .configuration.orientation === Configuration.ORIENTATION_PORTRAIT)
+            binding.albumList.layoutManager = GridLayoutManager(activity, 3)
+        else
+            binding.albumList.layoutManager = GridLayoutManager(activity, 4)
+
+    }
+
+
 }

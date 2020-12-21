@@ -15,8 +15,10 @@
         android:largeHeap="true"
         android:theme="@style/AppTheme"
         tools:targetApi="m">
-        <activity android:name=".MainActivity">
-            <intent-filter>
+        <activity android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />

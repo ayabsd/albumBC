@@ -12,7 +12,6 @@ class AlbumViewModel:BaseViewModel() {
     private val albumId = MutableLiveData<String>()
     private val albumImage = MutableLiveData<String>()
 
-
     fun bind(album: Album){
         albumId.value = "Album " + album.id
         albumImage.value = album.thumbnailUrl

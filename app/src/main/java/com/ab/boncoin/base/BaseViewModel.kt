@@ -16,12 +16,10 @@ abstract class BaseViewModel:ViewModel(){
         .builder()
         .networkModule(NetworkModule)
         .build()
-
     init {
+
         inject()
     }
-
-
     private fun inject() {
         when (this) {
             is AlbumListViewModel -> injector.inject(this)

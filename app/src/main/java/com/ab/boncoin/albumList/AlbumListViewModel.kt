@@ -1,6 +1,7 @@
 package com.ab.boncoin.albumList
 
 import android.view.View
+import androidx.databinding.ObservableBoolean
 import androidx.lifecycle.MutableLiveData
 import androidx.navigation.Navigation
 import com.ab.boncoin.R
@@ -8,7 +9,7 @@ import com.ab.boncoin.base.BaseViewModel
 import com.ab.boncoin.dao.AlbumDao
 import com.ab.boncoin.model.Album
 import com.ab.boncoin.model.Photo
-import com.ab.boncoin.network.Api
+import com.ab.boncoin.network.ApiService
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
@@ -22,12 +23,23 @@ import javax.inject.Inject
 
 class AlbumListViewModel(private val albumDao: AlbumDao):BaseViewModel() {
     @Inject
-    lateinit var api: Api
+    lateinit var api: ApiService
     val albumListAdapter: AlbumListAdapter = AlbumListAdapter()
     val loadingVisibility: MutableLiveData<Int> = MutableLiveData()
     val errorMessage: MutableLiveData<Int> = MutableLiveData()
     val errorClickListener = View.OnClickListener { loadPhotos() }
     private lateinit var subscription: Disposable
+
+    val isLoading = ObservableBoolean()
+
+    fun onRefresh() {
+        isLoading.set(true)
+        loadPhotos()
+    }
+
+    fun onReady() = isLoading.set(false)
+
+
     private val listener = object: AlbumListAdapter.OnAlbumClickListener {
         override fun onCustomItemClicked(album: Album , view : View) {
            Navigation.findNavController(view).navigate(AlbumListFragmentDirections
@@ -42,7 +54,7 @@ class AlbumListViewModel(private val albumDao: AlbumDao):BaseViewModel() {
         subscription.dispose()
     }
 
-    private fun loadPhotos() {
+     fun loadPhotos() {
         subscription = Observable.fromCallable { albumDao.all }
             .concatMap { dbPostList ->
                 if (dbPostList.isEmpty())
@@ -73,6 +85,7 @@ class AlbumListViewModel(private val albumDao: AlbumDao):BaseViewModel() {
     }
 
     private fun onRetrievePostListSuccess(photoList: List<Photo>) {
+        onReady()
         val albums: MutableMap<String, Album> = mutableMapOf()
 
         photoList.forEach { photo ->
@@ -87,8 +100,9 @@ class AlbumListViewModel(private val albumDao: AlbumDao):BaseViewModel() {
         albumListAdapter.setListenner(listener)
     }
 
-
     private fun onRetrieveAlbumListError() {
          errorMessage.value = R.string.album_error
     }
+
+
 }

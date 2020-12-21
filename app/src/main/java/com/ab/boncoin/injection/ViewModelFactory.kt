@@ -20,6 +20,5 @@ class ViewModelFactory(private val activity: AppCompatActivity): ViewModelProvid
             return AlbumListViewModel(db.postDao()) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
-
     }
 }

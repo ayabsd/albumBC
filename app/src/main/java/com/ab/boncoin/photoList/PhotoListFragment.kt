@@ -13,10 +13,14 @@ import com.ab.boncoin.model.Album
 import com.ab.boncoin.model.Photo
 import kotlinx.android.synthetic.main.fragment_photo_list.*
 
-class PhotoListFragment : Fragment()  , PhotoListAdapter.OnPhotoClickListener{
+class PhotoListFragment : Fragment(), PhotoListAdapter.OnPhotoClickListener {
     val photoListAdapter: PhotoListAdapter = PhotoListAdapter()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         return inflater.inflate(R.layout.fragment_photo_list, container, false)
     }
 
@@ -26,28 +30,32 @@ class PhotoListFragment : Fragment()  , PhotoListAdapter.OnPhotoClickListener{
         getDataFromAlbumListFragment()
     }
 
-    fun initRecycleView(){
+    fun initRecycleView() {
         photo_list.adapter = photoListAdapter
         photoListAdapter.setListenner(this)
         if (this.resources
                 .configuration.orientation === Configuration.ORIENTATION_PORTRAIT
-        ) {
+        )
             photo_list.layoutManager = GridLayoutManager(activity, 3)
-        } else {
+        else
             photo_list.layoutManager = GridLayoutManager(activity, 4)
-        }
+
     }
 
     fun getDataFromAlbumListFragment() {
-        val dataAlbum: Album? = PhotoListFragmentArgs.fromBundle(requireArguments()).argFromSenderFragment
+        val dataAlbum: Album? =
+            PhotoListFragmentArgs.fromBundle(requireArguments()).argFromSenderFragment
         if (dataAlbum != null) {
             progress.visibility = View.INVISIBLE
             photoListAdapter.updatePhotoList(dataAlbum.photos)
         }
     }
+
     override fun onPhotoClicked(album: Photo, view: View) {
-        Navigation.findNavController(view).navigate(PhotoListFragmentDirections
-            .actionPhotoListFrafmentToDetailsFragment(album))
+        Navigation.findNavController(view).navigate(
+            PhotoListFragmentDirections
+                .actionPhotoListFrafmentToDetailsFragment(album)
+        )
     }
 }
 

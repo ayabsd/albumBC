@@ -8,6 +8,7 @@ import androidx.databinding.BindingAdapter
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
+import com.ab.boncoin.R
 import com.bumptech.glide.load.model.GlideUrl
 import com.bumptech.glide.load.model.LazyHeaders
 
@@ -54,7 +55,7 @@ fun setMutableText(view: TextView, text: MutableLiveData<String>?) {
             GlideApp.with(imageView.context)
                 .load(urlGlide)
                 .thumbnail(0.1f)
-
+                .placeholder(R.drawable.placeholder)
                 .into(imageView)
 
         }
@@ -73,7 +74,7 @@ fun setImageUrlFromString(imageView: ImageView, urlString: String??) {
         GlideApp.with(imageView.context)
             .load(urlGlide)
             .thumbnail(0.1f)
-
+            .placeholder(R.drawable.placeholder)
             .into(imageView)
 
     }

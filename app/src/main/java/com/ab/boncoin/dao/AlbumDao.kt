@@ -13,7 +13,7 @@ import com.ab.boncoin.model.Photo
 @Dao
 interface AlbumDao {
     @get:Query("SELECT * FROM albums")
-    val all: List<Photo>
+     val all: List<Photo>
 
     @Insert
     fun insertAll(vararg photo: Photo)

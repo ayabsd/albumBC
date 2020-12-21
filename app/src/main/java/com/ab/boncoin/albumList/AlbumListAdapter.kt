@@ -49,7 +49,6 @@ class AlbumListAdapter : RecyclerView.Adapter<AlbumListAdapter.ViewHolder>() {
 
     fun setListenner(listenner : OnAlbumClickListener) {
         this.listenner = listenner
-
     }
 
     class ViewHolder(private val binding: ItemAlbumBinding) :

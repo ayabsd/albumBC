@@ -8,7 +8,7 @@ import retrofit2.http.GET
  * Created by Aya Boussaadia on 17,December,2020
  */
 
-interface Api {
+interface ApiService {
     /**
      * Get the list of the pots from the API
      */

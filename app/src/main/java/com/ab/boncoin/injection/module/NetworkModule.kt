@@ -1,6 +1,6 @@
 package com.ab.boncoin.injection.module
 
-import com.ab.boncoin.network.Api
+import com.ab.boncoin.network.ApiService
 import com.ab.boncoin.utils.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -20,8 +20,8 @@ object NetworkModule {
     @Provides
     @Reusable
     @JvmStatic
-    internal fun providePostApi(retrofit: Retrofit): Api {
-        return retrofit.create(Api::class.java)
+    internal fun providePostApi(retrofit: Retrofit): ApiService {
+        return retrofit.create(ApiService::class.java)
     }
 
 

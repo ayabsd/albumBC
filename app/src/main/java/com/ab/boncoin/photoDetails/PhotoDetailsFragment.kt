@@ -28,12 +28,8 @@ class PhotoDetailsFragment : Fragment() {
             container,
             false
         )
-
         val dataPhoto: Photo = PhotoDetailsFragmentArgs.fromBundle(requireArguments()).argFromSenderFragment
-        if (dataPhoto != null) {
-           binding.photo = dataPhoto
-
-        }
+        if (dataPhoto != null) binding.photo = dataPhoto
 
         return binding.root
     }
