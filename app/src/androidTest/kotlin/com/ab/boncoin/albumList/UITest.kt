@@ -9,8 +9,8 @@ import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
-import com.ab.boncoin.ui.MainActivity
 import com.ab.boncoin.R
+import com.ab.boncoin.ui.MainActivity
 import com.ab.boncoin.ui.albumList.AlbumListAdapter
 import org.hamcrest.core.AllOf
 import org.hamcrest.core.StringEndsWith

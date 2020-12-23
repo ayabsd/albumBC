@@ -2,6 +2,5 @@
     <string name="app_name">albumBC</string>
     <string name="retry">Retry</string>
     <string name="album_error">An error occurred while loading the albums</string>
-    <!-- TODO: Remove or change this placeholder text -->
 
 </resources>

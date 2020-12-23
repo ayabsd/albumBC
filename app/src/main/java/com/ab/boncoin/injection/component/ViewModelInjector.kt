@@ -1,8 +1,8 @@
 package com.ab.boncoin.injection.component
 
+import com.ab.boncoin.injection.module.NetworkModule
 import com.ab.boncoin.ui.albumList.AlbumListViewModel
 import com.ab.boncoin.ui.albumList.AlbumViewModel
-import com.ab.boncoin.injection.module.NetworkModule
 import dagger.Component
 import javax.inject.Singleton
 
