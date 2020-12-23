@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.ab.boncoin.databinding.FragmentAlbumListBinding
 import com.ab.boncoin.injection.ViewModelFactory
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.fragment_album_list.*
 
 
 /**

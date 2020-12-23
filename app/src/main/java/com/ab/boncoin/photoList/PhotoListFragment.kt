@@ -14,7 +14,7 @@ import com.ab.boncoin.model.Photo
 import kotlinx.android.synthetic.main.fragment_photo_list.*
 
 class PhotoListFragment : Fragment(), PhotoListAdapter.OnPhotoClickListener {
-    val photoListAdapter: PhotoListAdapter = PhotoListAdapter()
+    private val photoListAdapter: PhotoListAdapter = PhotoListAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,7 +30,7 @@ class PhotoListFragment : Fragment(), PhotoListAdapter.OnPhotoClickListener {
         getDataFromAlbumListFragment()
     }
 
-    fun initRecycleView() {
+    private fun initRecycleView() {
         photo_list.adapter = photoListAdapter
         photoListAdapter.setListenner(this)
         if (this.resources
@@ -42,7 +42,7 @@ class PhotoListFragment : Fragment(), PhotoListAdapter.OnPhotoClickListener {
 
     }
 
-    fun getDataFromAlbumListFragment() {
+    private fun getDataFromAlbumListFragment() {
         val dataAlbum: Album? =
             PhotoListFragmentArgs.fromBundle(requireArguments()).argFromSenderFragment
         if (dataAlbum != null) {

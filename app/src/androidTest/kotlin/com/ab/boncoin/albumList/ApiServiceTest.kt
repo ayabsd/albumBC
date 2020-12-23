@@ -13,7 +13,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
  */
 class ApiServiceTest {
 
-    lateinit var service: ApiService
+    private lateinit var service: ApiService
 
     @Before
     internal fun setUp() {

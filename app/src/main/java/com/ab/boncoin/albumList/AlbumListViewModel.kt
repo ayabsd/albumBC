@@ -37,7 +37,7 @@ class AlbumListViewModel(private val albumDao: AlbumDao):BaseViewModel() {
         loadPhotos()
     }
 
-    fun onReady() = isLoading.set(false)
+    private fun onReady() = isLoading.set(false)
 
 
     private val listener = object: AlbumListAdapter.OnAlbumClickListener {
@@ -54,7 +54,7 @@ class AlbumListViewModel(private val albumDao: AlbumDao):BaseViewModel() {
         subscription.dispose()
     }
 
-     fun loadPhotos() {
+     private fun loadPhotos() {
         subscription = Observable.fromCallable { albumDao.all }
             .concatMap { dbPostList ->
                 if (dbPostList.isEmpty())
