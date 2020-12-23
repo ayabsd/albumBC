@@ -1,8 +1,8 @@
-# 1 Basic Overview 
+# 1/ Basic Overview 
 Our project will be based on technical-test.json API in order to display a list of Pictures.
 https://static.leboncoin.fr/img/shared/technical-test.json.
 
-# 2 Technical decisions
+# 2/ Technical decisions
 
 #  Architecture :
 MVVM : 
@@ -13,7 +13,7 @@ Kotlin
 Kotlin has fixed many issues present in the the Java language. For example, the null references in Kotlin are controlled by the type system. Kotlin has proper function types and it has no raw types. Kotlin is less verbose in comparison to Java .
 
 
-# 3 Librairies
+# 3/ Librairies
 
 # Room Persistence Library
 
@@ -60,7 +60,9 @@ ViewModel support - you can scope a ViewModel to a navigation graph to share UI-
 In addition, you can use Android Studio's Navigation Editor to view and edit your navigation graphs
 
 
+# Data Binding Library   
 
+The Data Binding Library is a support library that allows you to bind UI components in your layouts to data sources in your app using a declarative format rather than programmatically.
 
 
 
