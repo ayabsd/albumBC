@@ -1,10 +1,10 @@
- # Basic Overview 
+# 1 Basic Overview 
 Our project will be based on technical-test.json API in order to display a list of Pictures.
 https://static.leboncoin.fr/img/shared/technical-test.json.
 
-# Libraries and technical decisions
+# 2 Technical decisions
 
-# Architecture :
+#  Architecture :
 MVVM : 
 First, let’s talk about what the MVVM pattern is. The MVVM pattern is a pattern derived from the MVP pattern defined by Martin Fowler in the 1990s. The MVVM (Model-View-ViewModel) pattern helps to completely separate the business and presentation logic from the UI, and the business logic and UI can be clearly separated for easier testing and easier maintenance. Let’s take a look at View, ViewModel and Model.
 
@@ -13,8 +13,10 @@ Kotlin
 Kotlin has fixed many issues present in the the Java language. For example, the null references in Kotlin are controlled by the type system. Kotlin has proper function types and it has no raw types. Kotlin is less verbose in comparison to Java .
 
 
-# Librairies
-Room Persistence Library
+# 3 Librairies
+
+# Room Persistence Library
+
 Room is an Android persistence library that is part of Google’s Android Jetpack project. According to the documentation, Room provides an abstraction layer over SQLite to allow fluent database access while harnessing the full power of SQLite.
 
 # Dargger
