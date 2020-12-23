@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.ab.boncoin.albumList.AlbumListViewModel" />
+            type="com.ab.boncoin.ui.albumList.AlbumListViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

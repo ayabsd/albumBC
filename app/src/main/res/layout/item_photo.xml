@@ -7,7 +7,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.ab.boncoin.photoList.PhotoiewModel" />
+            type="com.ab.boncoin.ui.photoList.PhotoiewModel" />
     </data>
 
     <androidx.cardview.widget.CardView

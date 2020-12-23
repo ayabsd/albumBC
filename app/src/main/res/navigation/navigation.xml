@@ -9,7 +9,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.ab.boncoin.albumList.AlbumListFragment"
+        android:name="com.ab.boncoin.ui.albumList.AlbumListFragment"
         android:label="Albums"
         tools:layout="@layout/fragment_album_list" >
 
@@ -21,7 +21,7 @@
 
     <fragment
         android:id="@+id/photoListFrafment"
-        android:name="com.ab.boncoin.photoList.PhotoListFragment"
+        android:name="com.ab.boncoin.ui.photoList.PhotoListFragment"
         android:label="Pictures"
         tools:layout="@layout/fragment_photo_list" >
         <argument android:name="arg_from_sender_fragment"
@@ -37,7 +37,7 @@
 
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.ab.boncoin.photoDetails.PhotoDetailsFragment"
+        android:name="com.ab.boncoin.ui.photoDetails.PhotoDetailsFragment"
         android:label="Picture details"
         tools:layout="@layout/fragment_photo_details" >
         <argument android:name="arg_from_sender_fragment"

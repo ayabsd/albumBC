@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.room.Room
-import com.ab.boncoin.albumList.AlbumListViewModel
+import com.ab.boncoin.ui.albumList.AlbumListViewModel
 import com.ab.boncoin.model.AppDatabase.AppDatabase
 
 
