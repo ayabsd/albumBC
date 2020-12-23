@@ -1,5 +1,5 @@
  # Basic Overview 
-This app will download a list of albums .
+Our project will be based on technical-test.json API in order to display a list of Pictures.
 https://static.leboncoin.fr/img/shared/technical-test.json.
 
 # Libraries and technical decisions
